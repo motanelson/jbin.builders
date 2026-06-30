@@ -8,8 +8,8 @@ def saves(i):
     f1.close()
 
 print("\033c\033[47;31m\ngive me the .java file to open ? \n")
-#a=input().strip()
-a="Hello.java"
+a=input().strip()
+#a="Hello.java"
 b=a.find(".")
 c=a
 if b>-1:
@@ -135,10 +135,10 @@ for aaa in bb:
             i=bytearray([0])
             u="nop\n"
 functions.sort()
-print(functions)
+#print(functions)
 print("-"*20)
 values.sort()
-print(values)
+#print(values)
 
 
 op="JBIN".encode()
