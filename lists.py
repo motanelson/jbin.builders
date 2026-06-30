@@ -20,14 +20,11 @@ os.system("javap -c -private "+c+" >/tmp/output.txt")
 f1=open("/tmp/output.txt","r")
 aa=f1.read()
 f1.close()
-f1=open("/tmp/output.jbin","bw")
-
-f1.close()
 i=bytearray([0])
 bb=aa.split("\n")
 steps=0
 u="nop\n"
-lasts=-1
+lasts=""
 functions=[[125,"",bytearray([1,0,1,0])]]
 values=[[125,"",bytearray([1,0,1,65])]]
 for aaa in bb:
@@ -63,11 +60,14 @@ for aaa in bb:
             ff=bytearray([1,0,pp])            
             ff=ff+zz
             values.append([124,zzz,ff])
-            for tt in values:
-                if values[1]==lasts:
-                   values[2]=i
+            ni=len(i)
+            i=bytearray([1,0,ni])+i
+            functions.append([124,lasts,i])
+
             u="nop\n"
+            
             lasts=zzz
+            
             i=bytearray([0])
             
         g=aaa.find(": ")
@@ -129,6 +129,8 @@ for aaa in bb:
             
         g=aaa.find("}")
         if g>-1:
+            ni=len(i)
+            i=bytearray([1,0,ni])+i
             functions.append([124,lasts,i])
             
             u="nop\n"
