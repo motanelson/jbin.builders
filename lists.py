@@ -92,8 +92,9 @@ for aaa in bb:
                 ff=bytearray([1,0,pp])
                 
                 ff=ff+zzz
-                values.append([124,zz,ff])
-                 
+                
+                ass=ff
+                azz=zz
                 aaa=aaa[:g]
             aaa=aaa.strip()
             g=aaa.find("#")
@@ -113,6 +114,7 @@ for aaa in bb:
                     
                     i=i+bytearray([int(ii)])
                     i=i+bytearray([int(n)])
+                    values.append([n,azz,ass])
                 except:
                     print(xxx+" error:")
             else:
