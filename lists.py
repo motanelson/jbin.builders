@@ -92,7 +92,7 @@ for aaa in bb:
                 ff=bytearray([1,0,pp])
                 
                 ff=ff+zzz
-                functions.append([124,zz,ff])
+                values.append([124,zz,ff])
                  
                 aaa=aaa[:g]
             aaa=aaa.strip()
